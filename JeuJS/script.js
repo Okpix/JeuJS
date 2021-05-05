@@ -27,6 +27,7 @@ function start() {
   current2.innerHTML = begincount;
   dede.innerHTML = begincount;
 
+  change();
 };
 
 
@@ -46,47 +47,133 @@ var roll = function(){
 	dede.innerHTML = (dice);
   console.log(dede.innerHTML);
 
-  /* si le dé fait 1 le score du tour est remis à zéro grâce à la fonction reset() */
-  if (dice == 1) {
+ /* si le dé fait 1 le score du tour est remis à zéro grâce à la fonction reset() et on change de joueur */
+
+  if (dice == 1){
     reset();
+    if(P1turn == 0){
+      resetTurn1();
+    }
+    else{
+      resetTurn2();
+    }   
   }
-  else{
+  else if(P1turn == 0){
     roundhold();
+  }
+  else if(P2turn == 0){
+    roundhold2();
   }
 }
 
 
+  
+function change(){
+    var element = document.getElementById('player1');
+    element.classList.toggle("player");
+}
+function change2(){
+  var element = document.getElementById('player2');
+  element.classList.toggle("player");
+}
+
 /* lancer un dé et l'aditionner au total du current de manière automatique */ 
+
+var P1turn = 0;
+var P2turn = 1;
 
 function roundhold(){
   
   var holdCount = eval(dede.innerHTML.valueOf());
   var currentCount = eval(current1.innerHTML.valueOf());
-  var dice = eval(dede.innerHTML.valueOf());
+ 
 
   var add = currentCount + holdCount;
 
   current1.innerHTML = add;
 
+  if(current1.innerHTML >= 100){
+    alert ('Player 1 win !!!');
+    start();
+  }
+
   
 };
 
+function roundhold2(){
+  
+  var holdCount2 = eval(dede.innerHTML.valueOf());
+  var currentCount2 = eval(current2.innerHTML.valueOf());
+ 
+
+  var add = currentCount2 + holdCount2;
+
+  current2.innerHTML = add;
+
+  if(current2.innerHTML >= 100){
+    alert ('Player 2 win !!!');
+    start();
+  }
+  
+};
+
+
 function reset(){
   current1.innerHTML = 0;
+  current2.innerHTML = 0;
 };
+
+function resetTurn1(){
+  P1turn = 1;
+  P2turn = 0;
+}
+
+function resetTurn2(){
+  P1turn = 0;
+  P2turn = 1;
+}
 
 /* conserver le score du tour en cours et déclancher la victoire si le score atteint 100*/ 
 
+
+
+
 function hold(){
-  var hold = eval(scoreP1.innerHTML.valueOf());
-  var currentCount = eval(current1.innerHTML.valueOf());
+  if (P1turn == 0){
+    hold1();
+  }
+  else{
+    hold2()
+  }
+}
 
 
-  scoreP1.innerHTML = currentCount + hold;
+function hold1(){
+  var hold1 = eval(scoreP1.innerHTML.valueOf());
+  var currentCount1 = eval(current1.innerHTML.valueOf());
+
+
+  scoreP1.innerHTML = currentCount1 + hold1;
   reset();
+  resetTurn1();
 
   if(scoreP1.innerHTML >= 100){
-    alert ('you win');
+    alert ('Player 1 win !!!');
+    start();
+  }
+}
+
+function hold2(){
+  var hold2 = eval(scoreP2.innerHTML.valueOf());
+  var currentCount2 = eval(current2.innerHTML.valueOf());
+
+
+  scoreP2.innerHTML = currentCount2 + hold2;
+  reset();
+  resetTurn2();
+
+  if(scoreP2.innerHTML >= 100){
+    alert ('Player 2 win !!!');
     start();
   }
 }
