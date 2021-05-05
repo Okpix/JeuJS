@@ -55,16 +55,32 @@ var nbrAleatoire = function(nbr){
 }
 
 var roll = function(){
-	var a = nbrAleatoire(tabNbr);
-	dede.innerHTML = (a);
+	var ded = nbrAleatoire(tabNbr);
+	dede.innerHTML = (ded);
   console.log(dede.innerHTML)
 }
 
 
-/* garder un dé */ 
+/* garder un dé et l'aditionner au total du current */ 
 
 function hold(){
+  
+  var holdCount = eval(dede.innerHTML.valueOf());
+  var currentCount = eval(current1.innerHTML.valueOf());
 
-  var hold = current1.innerHTML + dede.innerHTML;
-  current1.innerHTML = hold;
-}
+  var add = currentCount + holdCount;
+  var Count = true;
+ 
+  if(add > 21) {
+  reset();
+  }
+  else {
+    current1.innerHTML = add;
+    Count = false;
+    console.log(Count)
+  }
+};
+
+function reset() {
+  current1.innerHTML = 0;
+};
