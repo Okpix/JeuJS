@@ -32,19 +32,6 @@ function start() {
 
 /* lancer le dé */
 
-/*var dede = document.getElementById('dede');
-var testbtn = document.getElementById('roll');
-
-
-
-function calcul(){
-  return Math.floor(Math.random() * 6) + 1;
-};
-
-dede.innerHTML = calcul();
-
-console.log(dede);*/
-
 var tabNbr = [];
 for (i = 1; i <= 6; i++){
 	tabNbr.push(i)
@@ -55,32 +42,51 @@ var nbrAleatoire = function(nbr){
 }
 
 var roll = function(){
-	var ded = nbrAleatoire(tabNbr);
-	dede.innerHTML = (ded);
-  console.log(dede.innerHTML)
+	var dice = nbrAleatoire(tabNbr);
+	dede.innerHTML = (dice);
+  console.log(dede.innerHTML);
+
+  /* si le dé fait 1 le score du tour est remis à zéro grâce à la fonction reset() */
+  if (dice == 1) {
+    reset();
+  }
+  else{
+    roundhold();
+  }
 }
 
 
-/* garder un dé et l'aditionner au total du current */ 
+/* lancer un dé et l'aditionner au total du current de manière automatique */ 
 
-function hold(){
+function roundhold(){
   
   var holdCount = eval(dede.innerHTML.valueOf());
   var currentCount = eval(current1.innerHTML.valueOf());
+  var dice = eval(dede.innerHTML.valueOf());
 
   var add = currentCount + holdCount;
-  var Count = true;
- 
-  if(add > 21) {
-  reset();
-  }
-  else {
-    current1.innerHTML = add;
-    Count = false;
-    console.log(Count)
-  }
+
+  current1.innerHTML = add;
+
+  
 };
 
-function reset() {
+function reset(){
   current1.innerHTML = 0;
 };
+
+/* conserver le score du tour en cours et déclancher la victoire si le score atteint 100*/ 
+
+function hold(){
+  var hold = eval(scoreP1.innerHTML.valueOf());
+  var currentCount = eval(current1.innerHTML.valueOf());
+
+
+  scoreP1.innerHTML = currentCount + hold;
+  reset();
+
+  if(scoreP1.innerHTML >= 100){
+    alert ('you win');
+    start();
+  }
+}
