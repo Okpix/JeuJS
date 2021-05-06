@@ -4,7 +4,30 @@
 body{
     margin: 0;
     padding:0;
+    font-family: Lato, Arial, sans-serif;
 }
-.player{
-    background: #256;
+h1{
+    font-size: 5vh;
+}
+h2{
+    font-size: 3.5vh;;
+}
+p{
+    font-size: 2vh;;
+}
+.Round{
+    background: red;
+}
+.score{
+    font-size: 6vh;
+}
+.scoreC{
+    font-size: 4vh;;
+}
+.playerbox{
+    height: 27vh;
+}
+#dede{
+    font-size: 5vh;
+    margin: 0;
 }

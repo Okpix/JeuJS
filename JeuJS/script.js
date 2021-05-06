@@ -1,13 +1,8 @@
-/*var button = document.getElementById('game');
+/* chargement de la page web */
 
-function evenement() {
-  alert('Vous avez décidé de lancer une nouvelle partie !')
-};
-
-button.addEventListener('click', evenement);
-
-
-
+window.addEventListener("load", function(begin) {
+  start();
+});
 
 /* début de partie */
 
@@ -15,7 +10,6 @@ var scoreP1 = document.getElementById('scoreP1');
 var scoreP2 = document.getElementById('scoreP2');
 var current1 = document.getElementById('current1');
 var current2 = document.getElementById('current2');
-
 
 
 function start() {
@@ -26,8 +20,6 @@ function start() {
   current1.innerHTML = begincount;
   current2.innerHTML = begincount;
   dede.innerHTML = begincount;
-
-  change();
 };
 
 
@@ -47,7 +39,7 @@ var roll = function(){
 	dede.innerHTML = (dice);
   console.log(dede.innerHTML);
 
- /* si le dé fait 1 le score du tour est remis à zéro grâce à la fonction reset() et on change de joueur */
+  /* si le dé fait 1 le score du tour est remis à zéro grâce à la fonction reset() et on change de joueur */
 
   if (dice == 1){
     reset();
@@ -65,16 +57,14 @@ var roll = function(){
     roundhold2();
   }
 }
-
-
-  
+ 
 function change(){
     var element = document.getElementById('player1');
-    element.classList.toggle("player");
+    element.classList.toggle("Round");
 }
 function change2(){
   var element = document.getElementById('player2');
-  element.classList.toggle("player");
+  element.classList.toggle("Round");
 }
 
 /* lancer un dé et l'aditionner au total du current de manière automatique */ 
@@ -88,33 +78,29 @@ function roundhold(){
   var currentCount = eval(current1.innerHTML.valueOf());
  
 
-  var add = currentCount + holdCount;
+  var add1 = currentCount + holdCount;
 
-  current1.innerHTML = add;
+  current1.innerHTML = add1;
 
-  if(current1.innerHTML >= 100){
+  if(add1 >= 100){
     alert ('Player 1 win !!!');
     start();
   }
-
-  
 };
 
 function roundhold2(){
   
   var holdCount2 = eval(dede.innerHTML.valueOf());
   var currentCount2 = eval(current2.innerHTML.valueOf());
- 
 
-  var add = currentCount2 + holdCount2;
+  var add2 = currentCount2 + holdCount2;
 
-  current2.innerHTML = add;
+  current2.innerHTML = add2;
 
-  if(current2.innerHTML >= 100){
+  if(add2 >= 100){
     alert ('Player 2 win !!!');
     start();
   }
-  
 };
 
 
@@ -134,9 +120,6 @@ function resetTurn2(){
 }
 
 /* conserver le score du tour en cours et déclancher la victoire si le score atteint 100*/ 
-
-
-
 
 function hold(){
   if (P1turn == 0){
