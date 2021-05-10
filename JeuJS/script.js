@@ -2,6 +2,7 @@
 
 window.addEventListener("load", function(begin) {
   start();
+  change();
 });
 
 /* début de partie */
@@ -45,9 +46,11 @@ var roll = function(){
     reset();
     if(P1turn == 0){
       resetTurn1();
+      change2();
     }
     else{
       resetTurn2();
+      change();
     }   
   }
   else if(P1turn == 0){
@@ -58,15 +61,32 @@ var roll = function(){
   }
 }
  
+
+/* fonction permettant de changer l'aspect visuel en fonction du tour du joueur */
+var player2 = document.getElementById('player2');
+var player1 = document.getElementById('player1');
+var currentPlayer1 = document.getElementById('currentPlayer1');
+var currentPlayer2 = document.getElementById('currentPlayer2');
+
 function change(){
-    var element = document.getElementById('player1');
-    element.classList.toggle("Round");
+    player1.classList.toggle('Round');
+    player2.classList.remove('Round');
+    currentPlayer2.classList.remove('bg-danger');
+    currentPlayer1.classList.toggle('bg-danger');
 }
 function change2(){
-  var element = document.getElementById('player2');
-  element.classList.toggle("Round");
+  player2.classList.toggle('Round');
+  player1.classList.remove('Round');
+  currentPlayer1.classList.remove('bg-danger');
+  currentPlayer2.classList.toggle('bg-danger');
 }
 
+
+if (P1turn = 0){
+  change();
+}else{
+  change2();
+}
 /* lancer un dé et l'aditionner au total du current de manière automatique */ 
 
 var P1turn = 0;
@@ -139,6 +159,7 @@ function hold1(){
   scoreP1.innerHTML = currentCount1 + hold1;
   reset();
   resetTurn1();
+  change2();
 
   if(scoreP1.innerHTML >= 100){
     alert ('Player 1 win !!!');
@@ -154,6 +175,7 @@ function hold2(){
   scoreP2.innerHTML = currentCount2 + hold2;
   reset();
   resetTurn2();
+  change();
 
   if(scoreP2.innerHTML >= 100){
     alert ('Player 2 win !!!');

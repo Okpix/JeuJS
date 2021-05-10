@@ -5,6 +5,7 @@ body{
     margin: 0;
     padding:0;
     font-family: Lato, Arial, sans-serif;
+    background: lightgrey;
 }
 h1{
     font-size: 5vh;
@@ -16,7 +17,10 @@ p{
     font-size: 2vh;;
 }
 .Round{
-    background: red;
+    background: lightseagreen;
+}
+.Round2{
+    background: lightgrey;
 }
 .score{
     font-size: 6vh;
@@ -30,4 +34,14 @@ p{
 #dede{
     font-size: 5vh;
     margin: 0;
+}
+#player1.container, #player2.container{
+    border: 3px solid black;
+    border-radius: 5px;
+}
+#currentPlayer1, #currentPlayer2{
+    width: 10rem;
+    height: 9rem;
+    border: 3px solid black;
+    border-radius: 5px;
 }

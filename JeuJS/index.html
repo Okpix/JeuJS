@@ -31,13 +31,13 @@
                     </div>
                     <div class="modal-body">
                         Le jeu comprend 2 joueurs sur un seul et même écran.<br><br>
-                        Chaque joueur possède un score temporaire (ROUND) et un score global (GLOBAL).
-                        À chaque tour, le joueur a son ROUND initialisé à 0 et peut lancer un dé autant de fois qu'il le souhaite. Le 
-                        résultat d’un lancer est ajouté au ROUND. Le premier joueur qui atteint les 100 points sur global gagne le jeu.<br><br>
+                        Chaque joueur possède un score temporaire (Current) et un score global (sous son pseudo).
+                        À chaque tour, le joueur a son Current initialisé à 0 et peut lancer un dé autant de fois qu'il le souhaite. Le 
+                        résultat d’un lancer est ajouté au Current. Le premier joueur qui atteint les 100 points sur global gagne le jeu.<br><br>
                         Lors de son tour, le joueur peut décider à tout moment de :<br><br>
-                        - Cliquer sur l’option “Hold”, qui permet d’envoyer les points du ROUND vers le GLOBAL. Ce sera alors le
+                        - Cliquer sur l’option “Hold”, qui permet d’envoyer les points du CUrrent vers le GLOBAL. Ce sera alors le
                         tour de l’autre joueur.<br><br>
-                        - Lancer le dé. S’il obtient un 1, son score ROUND est perdu et c’est la fin de son tour.
+                        - Lancer le dé. S’il obtient un 1, son score Current est perdu et c’est la fin de son tour.
                         
                     </div>
                     <div class="modal-footer">
@@ -52,10 +52,10 @@
 
         <main class="container col-lg-12">
                 <div class="row">
-                    <div class="container col-lg-5 lock text-center bg-primary playerbox" id="player1">
+                    <div class="container col-lg-5 lock text-center playerbox" id="player1">
                         <h2>Player 1</h2>
                         <p><span id="scoreP1" class="score"></span></p>
-                        <div class="container text-center bg-danger">
+                        <div class="container text-center bg-danger" id="currentPlayer1">
                             <p>Current</p>
                             <p id="current1" class="scoreC"></p>
                         </div>
@@ -71,10 +71,10 @@
                         <br><br>
                     </div>
 
-                    <div class="container col-lg-5 bg-light lock text-center playerbox" id="player2">
+                    <div class="container col-lg-5 lock text-center playerbox" id="player2">
                         <h2>Player 2</h2>
                         <p><span id="scoreP2" class="score"></span></p>
-                        <div class="container text-center bg-danger">
+                        <div class="container text-center bg-danger" id="currentPlayer2">
                             <p>Current</p>
                             <p id="current2" class="scoreC"></p>
                         </div>
