@@ -103,7 +103,7 @@ function roundhold(){
   current1.innerHTML = add1;
 
   if(add1 >= 100){
-    alert ('Player 1 win !!!');
+    alert (texte2.innerHTML + ' win !!!');
     start();
   }
 };
@@ -118,7 +118,7 @@ function roundhold2(){
   current2.innerHTML = add2;
 
   if(add2 >= 100){
-    alert ('Player 2 win !!!');
+    alert (texte4.innerHTML + ' win !!!');
     start();
   }
 };
@@ -162,7 +162,7 @@ function hold1(){
   change2();
 
   if(scoreP1.innerHTML >= 100){
-    alert ('Player 1 win !!!');
+    alert (texte2.innerHTML + ' win !!!');
     start();
   }
 }
@@ -178,7 +178,19 @@ function hold2(){
   change();
 
   if(scoreP2.innerHTML >= 100){
-    alert ('Player 2 win !!!');
+    alert (texte4.innerHTML + ' win !!!');
     start();
   }
 }
+
+
+/* définir un pseudo pour les joueurs */
+
+
+function afficher(){
+var saisie = document.getElementById("texte1").value;
+var saisie2 = document.getElementById("texte3").value;
+document.getElementById("texte2").innerHTML = saisie ;
+document.getElementById("texte4").innerHTML = saisie2 ;
+}
+

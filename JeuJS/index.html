@@ -53,7 +53,7 @@
         <main class="container col-lg-12">
                 <div class="row">
                     <div class="container col-lg-5 lock text-center playerbox" id="player1">
-                        <h2>Player 1</h2>
+                        <h2  id="texte2"></h2>
                         <p><span id="scoreP1" class="score"></span></p>
                         <div class="container text-center bg-danger" id="currentPlayer1">
                             <p>Current</p>
@@ -72,7 +72,7 @@
                     </div>
 
                     <div class="container col-lg-5 lock text-center playerbox" id="player2">
-                        <h2>Player 2</h2>
+                        <h2 id="texte4"></h2>
                         <p><span id="scoreP2" class="score"></span></p>
                         <div class="container text-center bg-danger" id="currentPlayer2">
                             <p>Current</p>
@@ -82,10 +82,22 @@
                 </div>
         </main>
 
+
+
+        <form>
+            <div class="mb-3">
+              <label for="player1Pseudo" class="form-label">Pseudo player 1</label>
+              <input type="text" value="" id="texte1" />
+            </div>
+            <div class="mb-3">
+                <label for="player1Pseudo" class="form-label">Pseudo player 2</label>
+                <input type="text" value="" id="texte3" />
+            </div>
+            <input type="button" id="bouton" value="Afficher" size="30" onclick="afficher()"><br><br>
+        </form>
+
         <footer>
-
-
-
+        
         </footer>
         <script src="script.js"></script>
     </body>
