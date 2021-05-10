@@ -3,6 +3,7 @@
 window.addEventListener("load", function(begin) {
   start();
   change();
+  show();
 });
 
 /* début de partie */
@@ -35,10 +36,18 @@ var nbrAleatoire = function(nbr){
 	return nbr[Math.floor(Math.random() * nbr.length)];
 }
 
-var roll = function(){
+var roll = function roll1(){
 	var dice = nbrAleatoire(tabNbr);
 	dede.innerHTML = (dice);
   console.log(dede.innerHTML);
+
+
+
+/* permet d'affecter une image à une face de dé en fonction de son chiffre */
+const firstDiceImage = 'images/dice'+ dice +'.png';
+
+document.querySelectorAll('img')[0].setAttribute('src', firstDiceImage);
+
 
   /* si le dé fait 1 le score du tour est remis à zéro grâce à la fonction reset() et on change de joueur */
 
@@ -186,11 +195,29 @@ function hold2(){
 
 /* définir un pseudo pour les joueurs */
 
-
-function afficher(){
-var saisie = document.getElementById("texte1").value;
-var saisie2 = document.getElementById("texte3").value;
-document.getElementById("texte2").innerHTML = saisie ;
-document.getElementById("texte4").innerHTML = saisie2 ;
+var saisie2empty = "player2";
+var saisieempty = "player1";
+function show(){
+  document.getElementById("texte2").innerHTML = 'player 1';
+  document.getElementById("texte4").innerHTML = 'player 2';
 }
 
+function afficher(){
+
+var saisie = document.getElementById("texte1").value;
+var saisie2 = document.getElementById("texte3").value;
+
+
+if(saisie.length === 0){
+  document.getElementById("texte2").innerHTML = 'player 1';
+}else{
+  document.getElementById("texte2").innerHTML = saisie ;
+}
+
+
+if(saisie2.length === 0){
+  document.getElementById("texte4").innerHTML = 'player 2';
+}else{
+  document.getElementById("texte4").innerHTML = saisie2 ;
+}
+}

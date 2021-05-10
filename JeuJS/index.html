@@ -16,17 +16,18 @@
             <h1>Jeu de dé</h1>
             <br><br>
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#rulesModal">
                 Règles du jeu !
             </button>
             <button class="btn btn-primary btn-lg" id="game" onclick="start()">Nouvelle partie</button>
+            <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#playerName">Changer de pseudo</button>
 
               <!-- Modal -->
-              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal fade" id="rulesModal" tabindex="-1" aria-labelledby="rulesModal" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Règles</h5>
+                      <h5 class="modal-title" id="rulesModal">Règles</h5>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -64,6 +65,7 @@
                     <div class="container col-lg-2 text-center">
                         <br><br>
                         <p id="dede">dé</p>
+                        <img />
                         <br><br>
                         <button class="btn btn-primary btn-lg" id"roll" onclick="roll()">Lancer le dé</button>
                         <br><br>
@@ -84,7 +86,7 @@
 
 
 
-        <form>
+       <!-- <form>
             <div class="mb-3">
               <label for="player1Pseudo" class="form-label">Pseudo player 1</label>
               <input type="text" value="" id="texte1" />
@@ -93,8 +95,37 @@
                 <label for="player1Pseudo" class="form-label">Pseudo player 2</label>
                 <input type="text" value="" id="texte3" />
             </div>
-            <input type="button" id="bouton" value="Afficher" size="30" onclick="afficher()"><br><br>
-        </form>
+            <input type="button" id="bouton" value="Afficher" size="30" onclick="afficher()">
+        </form>-->
+
+
+
+        
+        
+             
+        <!-- Modal -->
+        <div class="modal fade" id="playerName" tabindex="-1" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                      <label for="player1Pseudo" class="form-label">Pseudo player 1</label>
+                      <input type="text" value="" id="texte1"/>
+                    </div>
+                    <div class="mb-3">
+                        <label for="player1Pseudo" class="form-label">Pseudo player 2</label>
+                        <input type="text" value="" id="texte3"/>
+                    </div>
+                </form> 
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="afficher()">Close</button>
+                
+              </div>
+            </div>
+          </div>
+        </div>
 
         <footer>
         
