@@ -17,7 +17,7 @@ p{
     font-size: 2vh;;
 }
 .Round{
-    background: lightseagreen;
+    background: #62929E;
 }
 .Round2{
     background: lightgrey;
@@ -49,3 +49,16 @@ img{
     height: 7rem;
     width: 7rem;
 }
+.btn{
+    color: #fff;
+    background: #393D3F;
+    border: 1px solid #fff;
+    height: 4.5rem;
+    margin: auto;
+}
+.btn:hover{
+    color: #fff;
+    background: #546A7B;
+    border: 1px solid #fff;
+}
+

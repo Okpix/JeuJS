@@ -14,13 +14,13 @@
         <header class="text-center">
             <br>
             <h1>Jeu de dé</h1>
-            <br><br>
+            <br>
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#rulesModal">
+            <button type="button" class="btn btn-lg" data-bs-toggle="modal" data-bs-target="#rulesModal">
                 Règles du jeu !
             </button>
-            <button class="btn btn-primary btn-lg" id="game" onclick="start()">Nouvelle partie</button>
-            <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#playerName">Changer de pseudo</button>
+            <button class="btn btn-lg" id="game" onclick="start()">Nouvelle partie</button>
+            <button type="button" class="btn btn-lg" data-bs-toggle="modal" data-bs-target="#playerName">Changer de pseudo</button>
 
               <!-- Modal -->
               <div class="modal fade" id="rulesModal" tabindex="-1" aria-labelledby="rulesModal" aria-hidden="true">
@@ -41,15 +41,15 @@
                         - Lancer le dé. S’il obtient un 1, son score Current est perdu et c’est la fin de son tour.
                         
                     </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary text-center" data-bs-dismiss="modal">Close</button>
+                    <div class="modal-footer text-center">
+                      <button type="button" class="btn text-center" data-bs-dismiss="modal">Close</button>
                     </div>
                   </div>
                 </div>
               </div>
         </header>
 
-        <br><br><br>
+        <br><br>
 
         <main class="container col-lg-12">
                 <div class="row">
@@ -63,13 +63,12 @@
                     </div>
 
                     <div class="container col-lg-2 text-center">
-                        <br><br>
                         <p id="dede">dé</p>
                         <img />
                         <br><br>
-                        <button class="btn btn-primary btn-lg" id"roll" onclick="roll()">Lancer le dé</button>
+                        <button class="btn btn-lg" id"roll" onclick="roll()">Lancer le dé</button>
                         <br><br>
-                        <button class="btn btn-primary btn-lg" id="hold" onclick="hold()">sécruiser !</button>
+                        <button class="btn btn-lg" id="hold" onclick="hold()">sécruiser !</button>
                         <br><br>
                     </div>
 
@@ -120,7 +119,7 @@
                 </form> 
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="afficher()">Close</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="afficher()">Valider</button>
                 
               </div>
             </div>
