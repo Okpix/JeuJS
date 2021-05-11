@@ -53,7 +53,7 @@
 
         <main class="container col-lg-12">
                 <div class="row">
-                    <div class="container col-lg-5 lock text-center playerbox" id="player1">
+                    <div class="container col-lg-5 text-center playerbox" id="player1">
                         <h2  id="texte2"></h2>
                         <p><span id="scoreP1" class="score"></span></p>
                         <div class="container text-center bg-danger" id="currentPlayer1">
@@ -68,7 +68,7 @@
                         <br><br>
                         <button class="btn btn-lg" id"roll" onclick="roll()">Lancer le dé</button>
                         <br><br>
-                        <button class="btn btn-lg" id="hold" onclick="hold()">sécruiser !</button>
+                        <button class="btn btn-lg" id="hold" onclick="hold()">sécuriser !</button>
                         <br><br>
                     </div>
 
@@ -83,25 +83,6 @@
                 </div>
         </main>
 
-
-
-       <!-- <form>
-            <div class="mb-3">
-              <label for="player1Pseudo" class="form-label">Pseudo player 1</label>
-              <input type="text" value="" id="texte1" />
-            </div>
-            <div class="mb-3">
-                <label for="player1Pseudo" class="form-label">Pseudo player 2</label>
-                <input type="text" value="" id="texte3" />
-            </div>
-            <input type="button" id="bouton" value="Afficher" size="30" onclick="afficher()">
-        </form>-->
-
-
-
-        
-        
-             
         <!-- Modal -->
         <div class="modal fade" id="playerName" tabindex="-1" aria-hidden="true">
           <div class="modal-dialog">
@@ -119,15 +100,14 @@
                 </form> 
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="afficher()">Valider</button>
-                
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="afficher()">Valider</button>  
               </div>
             </div>
           </div>
         </div>
-
-        <footer>
-        
+        <hr>
+        <footer class="text-center">
+        <h3>© Alexandre Vinet, 2021, dans le cadre d'une formation.</h3>
         </footer>
         <script src="script.js"></script>
     </body>

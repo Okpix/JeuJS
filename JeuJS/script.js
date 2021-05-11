@@ -13,7 +13,6 @@ var scoreP2 = document.getElementById('scoreP2');
 var current1 = document.getElementById('current1');
 var current2 = document.getElementById('current2');
 
-
 function start() {
   var begincount = 0;
   
@@ -23,7 +22,6 @@ function start() {
   current2.innerHTML = begincount;
   dede.innerHTML = begincount;
 };
-
 
 /* lancer le dé */
 
@@ -41,15 +39,13 @@ var roll = function roll1(){
 	dede.innerHTML = (dice);
   console.log(dede.innerHTML);
 
-
-
 /* permet d'affecter une image à une face de dé en fonction de son chiffre */
+
 const firstDiceImage = 'images/dice'+ dice +'.png';
 
 document.querySelectorAll('img')[0].setAttribute('src', firstDiceImage);
 
-
-  /* si le dé fait 1 le score du tour est remis à zéro grâce à la fonction reset() et on change de joueur */
+/* si le dé fait 1 le score du tour est remis à zéro grâce à la fonction reset() et on change de joueur */
 
   if (dice == 1){
     reset();
@@ -70,7 +66,6 @@ document.querySelectorAll('img')[0].setAttribute('src', firstDiceImage);
   }
 }
  
-
 /* fonction permettant de changer l'aspect visuel en fonction du tour du joueur */
 var player2 = document.getElementById('player2');
 var player1 = document.getElementById('player1');
@@ -90,12 +85,12 @@ function change2(){
   currentPlayer2.classList.toggle('bg-danger');
 }
 
-
 if (P1turn = 0){
   change();
 }else{
   change2();
 }
+
 /* lancer un dé et l'aditionner au total du current de manière automatique */ 
 
 var P1turn = 0;
@@ -132,6 +127,7 @@ function roundhold2(){
   }
 };
 
+/* outil/fonction pour la gestion des tours des joueurs */
 
 function reset(){
   current1.innerHTML = 0;
@@ -155,10 +151,9 @@ function hold(){
     hold1();
   }
   else{
-    hold2()
+    hold2();
   }
 }
-
 
 function hold1(){
   var hold1 = eval(scoreP1.innerHTML.valueOf());
@@ -192,7 +187,6 @@ function hold2(){
   }
 }
 
-
 /* définir un pseudo pour les joueurs */
 
 var saisie2empty = "player2";
@@ -207,13 +201,11 @@ function afficher(){
 var saisie = document.getElementById("texte1").value;
 var saisie2 = document.getElementById("texte3").value;
 
-
 if(saisie.length === 0){
   document.getElementById("texte2").innerHTML = 'player 1';
 }else{
   document.getElementById("texte2").innerHTML = saisie ;
 }
-
 
 if(saisie2.length === 0){
   document.getElementById("texte4").innerHTML = 'player 2';

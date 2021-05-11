@@ -1,6 +1,3 @@
-.lock{
-    height: 250px;
-}
 body{
     margin: 0;
     padding:0;
@@ -11,10 +8,10 @@ h1{
     font-size: 5vh;
 }
 h2{
-    font-size: 3.5vh;;
+    font-size: 3.5vh;
 }
 p{
-    font-size: 2vh;;
+    font-size: 2vh;
 }
 .Round{
     background: #62929E;
@@ -29,7 +26,7 @@ p{
     font-size: 4vh;;
 }
 .playerbox{
-    height: 27vh;
+    height: 28vh;
 }
 #dede{
     font-size: 5vh;
@@ -61,4 +58,3 @@ img{
     background: #546A7B;
     border: 1px solid #fff;
 }
-
