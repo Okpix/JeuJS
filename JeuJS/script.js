@@ -23,6 +23,26 @@ function start() {
   dede.innerHTML = begincount;
 };
 
+/* gestion des sons du jeu */
+
+var diceSound = new Audio('son/sondede.wav');
+var buzzSound = new Audio('son/buzz.wav');
+var winSound = new Audio('son/win.wav')
+
+
+function playSoundDede(){
+  diceSound.play();
+}
+
+function playSoundBuzz(){
+  buzzSound.play();
+}
+
+function playSoundWin(){
+  winSound.play();
+}
+
+
 /* lancer le dé */
 
 var tabNbr = [];
@@ -38,6 +58,7 @@ var roll = function roll1(){
 	var dice = nbrAleatoire(tabNbr);
 	dede.innerHTML = (dice);
   console.log(dede.innerHTML);
+  playSoundDede();
 
 /* permet d'affecter une image à une face de dé en fonction de son chiffre */
 
@@ -49,6 +70,7 @@ document.querySelectorAll('img')[0].setAttribute('src', firstDiceImage);
 
   if (dice == 1){
     reset();
+    playSoundBuzz();
     if(P1turn == 0){
       resetTurn1();
       change2();
@@ -107,6 +129,7 @@ function roundhold(){
   current1.innerHTML = add1;
 
   if(add1 >= 100){
+    playSoundWin();
     alert (texte2.innerHTML + ' win !!!');
     start();
   }
@@ -122,6 +145,7 @@ function roundhold2(){
   current2.innerHTML = add2;
 
   if(add2 >= 100){
+    playSoundWin();
     alert (texte4.innerHTML + ' win !!!');
     start();
   }
@@ -166,6 +190,7 @@ function hold1(){
   change2();
 
   if(scoreP1.innerHTML >= 100){
+    playSoundWin();
     alert (texte2.innerHTML + ' win !!!');
     start();
   }
@@ -182,6 +207,7 @@ function hold2(){
   change();
 
   if(scoreP2.innerHTML >= 100){
+    playSoundWin();
     alert (texte4.innerHTML + ' win !!!');
     start();
   }

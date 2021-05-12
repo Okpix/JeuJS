@@ -37,8 +37,8 @@ p{
     border-radius: 5px;
 }
 #currentPlayer1, #currentPlayer2{
-    width: 10rem;
-    height: 9rem;
+    width: 22vh;
+    height: 11vh;
     border: 3px solid black;
     border-radius: 5px;
 }
@@ -58,3 +58,4 @@ img{
     background: #546A7B;
     border: 1px solid #fff;
 }
+
