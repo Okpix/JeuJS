@@ -86,6 +86,17 @@ document.querySelectorAll('img')[0].setAttribute('src', firstDiceImage);
   else if(P2turn == 0){
     roundhold2();
   }
+
+  if (dice == 1 && P1turn == 1){
+    player1.classList.toggle('buzz');
+  }else{
+    player1.classList.remove('buzz');
+  }
+  if(dice == 1 && P2turn == 1){
+    player2.classList.toggle('buzz');
+  }else{
+    player2.classList.remove('buzz');
+  }
 }
  
 /* fonction permettant de changer l'aspect visuel en fonction du tour du joueur */

@@ -14,13 +14,15 @@ p{
     font-size: 2vh;
 }
 .Round{
-    background: #62929E;
+    background: #C4CEA1;
+    border: 6px solid #5C946E !important;
 }
 .Round2{
     background: lightgrey;
 }
 .score{
     font-size: 6vh;
+    color: #5C946E;
 }
 .scoreC{
     font-size: 4vh;;
@@ -33,14 +35,21 @@ p{
     margin: 0;
 }
 #player1.container, #player2.container{
-    border: 3px solid black;
+    border: 2px solid black;
     border-radius: 5px;
 }
 #currentPlayer1, #currentPlayer2{
     width: 22vh;
     height: 11vh;
-    border: 3px solid black;
+    border: 2px solid black;
     border-radius: 5px;
+}
+.buzz{
+    border: 3px solid #E71D36 !important;
+    background: #E71D36;
+}
+.bg-danger{
+    background: #E71D36;
 }
 img{
     height: 7rem;
@@ -50,7 +59,7 @@ img{
     color: #fff;
     background: #393D3F;
     border: 1px solid #fff;
-    height: 4.5rem;
+    height: 4rem;
     margin: auto;
 }
 .btn:hover{
