@@ -131,8 +131,8 @@ var P2turn = 1;
 
 function roundhold(){
   
-  var holdCount = eval(dede.innerHTML.valueOf());
-  var currentCount = eval(current1.innerHTML.valueOf());
+  let holdCount = eval(dede.innerHTML.valueOf());
+  let currentCount = eval(current1.innerHTML.valueOf());
  
 
   var add1 = currentCount + holdCount;
@@ -148,8 +148,8 @@ function roundhold(){
 
 function roundhold2(){
   
-  var holdCount2 = eval(dede.innerHTML.valueOf());
-  var currentCount2 = eval(current2.innerHTML.valueOf());
+  let holdCount2 = eval(dede.innerHTML.valueOf());
+  let currentCount2 = eval(current2.innerHTML.valueOf());
 
   var add2 = currentCount2 + holdCount2;
 
@@ -191,8 +191,8 @@ function hold(){
 }
 
 function hold1(){
-  var hold1 = eval(scoreP1.innerHTML.valueOf());
-  var currentCount1 = eval(current1.innerHTML.valueOf());
+  let hold1 = eval(scoreP1.innerHTML.valueOf());
+  let currentCount1 = eval(current1.innerHTML.valueOf());
 
 
   scoreP1.innerHTML = currentCount1 + hold1;
@@ -208,8 +208,8 @@ function hold1(){
 }
 
 function hold2(){
-  var hold2 = eval(scoreP2.innerHTML.valueOf());
-  var currentCount2 = eval(current2.innerHTML.valueOf());
+  let hold2 = eval(scoreP2.innerHTML.valueOf());
+  let currentCount2 = eval(current2.innerHTML.valueOf());
 
 
   scoreP2.innerHTML = currentCount2 + hold2;
@@ -228,6 +228,7 @@ function hold2(){
 
 var saisie2empty = "player2";
 var saisieempty = "player1";
+
 function show(){
   document.getElementById("texte2").innerHTML = 'player 1';
   document.getElementById("texte4").innerHTML = 'player 2';
@@ -235,8 +236,8 @@ function show(){
 
 function afficher(){
 
-var saisie = document.getElementById("texte1").value;
-var saisie2 = document.getElementById("texte3").value;
+let saisie = document.getElementById("texte1").value;
+let saisie2 = document.getElementById("texte3").value;
 
 if(saisie.length === 0){
   document.getElementById("texte2").innerHTML = 'player 1';

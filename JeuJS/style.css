@@ -45,7 +45,7 @@ p{
     border-radius: 5px;
 }
 .buzz{
-    border: 3px solid #E71D36 !important;
+    border: 3px solid black!important;
     background: #E71D36;
 }
 .bg-danger{
